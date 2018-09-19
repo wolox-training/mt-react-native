@@ -1,3 +1,6 @@
+$title-decoration-height: 90px;
+$title-decoration-width: 70px;
+
 .title {
   color: $black;
   font-size: $text-big;
@@ -11,8 +14,8 @@
     background-repeat: no-repeat;
     z-index: -1;
     position: absolute;
-    top: -25px;
-    left: -40px;
+    bottom: -15px ;
+    right: 160px;
     height: $title-decoration-height;
     width: $title-decoration-width;
   }
