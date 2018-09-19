@@ -1,0 +1,22 @@
+$title-decoration-height: 90px;
+$title-decoration-width: 70px;
+
+.title {
+  color: $black;
+  font-size: $text-big;
+  position: relative;
+  margin: 50px;
+  padding: 10px;
+
+  &::before {
+    content: '';
+    background-image: url(assets/triangle.svg);
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    bottom: -15px ;
+    right: 160px;
+    height: $title-decoration-height;
+    width: $title-decoration-width;
+  }
+}
