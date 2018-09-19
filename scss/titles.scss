@@ -1,0 +1,19 @@
+$title-decoration-height: 90px;
+$title-decoration-width: 70px;
+$text-big: 24px;
+$padding: 10px;
+
+div {
+  padding: $padding;
+}
+
+.title {
+  color: black;
+  font-size: $text-big;
+  transform: translate(-14%, -110%);
+}
+
+.img-titulo {
+  height: $title-decoration-height;
+  width: $title-decoration-width;
+}
