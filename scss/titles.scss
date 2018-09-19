@@ -1,19 +1,19 @@
-$title-decoration-height: 90px;
-$title-decoration-width: 70px;
-$text-big: 24px;
-$padding: 10px;
-
-div {
-  padding: $padding;
-}
-
 .title {
-  color: black;
+  color: $black;
   font-size: $text-big;
-  transform: translate(-14%, -110%);
-}
+  position: relative;
+  margin: 50px;
+  padding: 10px;
 
-.img-titulo {
-  height: $title-decoration-height;
-  width: $title-decoration-width;
+  &::before {
+    content: '';
+    background-image: url(assets/triangle.svg);
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    top: -25px;
+    left: -40px;
+    height: $title-decoration-height;
+    width: $title-decoration-width;
+  }
 }
