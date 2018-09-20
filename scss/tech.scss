@@ -1,0 +1,54 @@
+$tech-logo-size: 100px;
+
+.tech-element-div {
+  align-items: center;
+  background-color: $green;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  margin-left: 100px;
+  max-width: 200px;
+  max-height: 100%;
+  padding: 0 15px 15px;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    border: 2px solid $green;
+    border-radius: 10px;
+    bottom: 5px;
+    content: '';
+    height: 300px;
+    max-width: 200px;
+    max-height: 100%;
+    position: absolute;
+    right: 5px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.img-tech {
+  height: 100%;
+  margin: 10px;
+  max-height: $tech-logo-size;
+  max-width: $tech-logo-size;
+  width: 100%;
+}
+
+.tech-title,
+.tech-descr,
+.tech-release {
+  margin: 5px;
+  text-align: center;
+}
+
+.tech-release{
+  font-weight: bold;
+}
+
+.tech-title {
+  font-size: $text-medium;
+}
