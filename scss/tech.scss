@@ -23,13 +23,11 @@ $tech-logo-size: 100px;
   position: relative;
   width: 100%;
 
-  &:hover {
-
-    &::before {
+  &:hover::before {
       top: 5px;
       left: 5px;
     }
-  }
+
 
   &::before {
     border: 2px solid $green;
