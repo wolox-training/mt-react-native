@@ -1,6 +1,5 @@
 $tech-logo-size: 100px;
 
-
 .techs-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,9 +22,9 @@ $tech-logo-size: 100px;
   width: 100%;
 
   &:hover::before {
-      top: 5px;
-      left: 5px;
-    }
+    top: 5px;
+    left: 5px;
+  }
 
   &::before {
     border: 2px solid $green;
