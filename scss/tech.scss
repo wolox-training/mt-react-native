@@ -1,50 +1,49 @@
 $tech-logo-size: 100px;
-$tech-span-width: 200px;
-$tech-span-height: 300px;
-$max-percentaje: 100%;
-$border-radius: 10px;
 
 .tech-div {
-  margin-left: 100px;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 100px;
 }
 
-.tech-span {
-  background-color: $green;
-  border-radius: $border-radius;
-  width: $max-percentaje;
-  max-width: $tech-span-width;
-  height: $tech-span-height;
-  max-height: $max-percentaje;
-  position: relative;
-  margin: 15px;
-  display: flex;
+.tech-element-div {
   align-items: center;
-  justify-content: flex-start;
+  background-color: $green;
+  border-radius: 10px;
+  display: flex;
   flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  max-width: 200px;
+  max-height: 100%;
+  margin: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
 
   &::before {
-    content: '';
     border: 2px solid $green;
-    border-radius: $border-radius;
-    position: absolute;
+    border-radius: 10px;
     bottom: 10px;
+    content: '';
+    height: 300px;
+    max-width: 200px;
+    max-height: 100%;
+    position: absolute;
     right: 10px;
-    width: $max-percentaje;
-    max-width: $tech-span-width;
-    height: $tech-span-height;
-    max-height: $max-percentaje;
+    width: 100%;
+    z-index: -1;
   }
 }
 
 .img-tech {
+  height: 100%;
   margin: 10px;
-  width: $max-percentaje;
-  max-width: $tech-logo-size;
-  height: $max-percentaje;
   max-height: $tech-logo-size;
+  max-width: $tech-logo-size;
+  width: 100%;
 }
 
 .tech-descr {
