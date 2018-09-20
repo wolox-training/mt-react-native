@@ -1,11 +1,5 @@
 $tech-logo-size: 100px;
 
-.tech-div {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 100px;
-}
-
 .tech-element-div {
   align-items: center;
   background-color: $green;
@@ -14,25 +8,23 @@ $tech-logo-size: 100px;
   flex-direction: column;
   height: 300px;
   justify-content: space-evenly;
+  margin-left: 100px;
   max-width: 200px;
   max-height: 100%;
-  margin: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px 15px;
   position: relative;
   width: 100%;
 
   &::before {
     border: 2px solid $green;
     border-radius: 10px;
-    bottom: 10px;
+    bottom: 5px;
     content: '';
     height: 300px;
     max-width: 200px;
     max-height: 100%;
     position: absolute;
-    right: 10px;
+    right: 5px;
     width: 100%;
     z-index: -1;
   }
@@ -46,7 +38,15 @@ $tech-logo-size: 100px;
   width: 100%;
 }
 
-.tech-descr {
+.tech-title, .tech-descr, .tech-release {
   margin: 5px;
   text-align: center;
+}
+
+.tech-release{
+  font-weight: bold;
+}
+
+.tech-title {
+  font-size: $text-medium;
 }
