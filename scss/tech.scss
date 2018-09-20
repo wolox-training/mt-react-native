@@ -1,5 +1,6 @@
 $tech-logo-size: 100px;
 
+
 .tech-div {
   display: flex;
   flex-wrap: wrap;
@@ -14,12 +15,10 @@ $tech-logo-size: 100px;
   flex-direction: column;
   height: 350px;
   justify-content: space-evenly;
+  margin: 15px;
   max-width: 225px;
   max-height: 100%;
-  margin: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px 15px;
   position: relative;
   width: 100%;
 
@@ -45,7 +44,17 @@ $tech-logo-size: 100px;
   width: 100%;
 }
 
-.tech-descr {
+.tech-title,
+.tech-descr,
+.tech-release {
   margin: 5px;
   text-align: center;
+}
+
+.tech-release{
+  font-weight: bold;
+}
+
+.tech-title {
+  font-size: $text-medium;
 }
