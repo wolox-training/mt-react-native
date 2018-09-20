@@ -1,0 +1,53 @@
+$tech-logo-size: 100px;
+$tech-span-width: 200px;
+$tech-span-height: 300px;
+$max-percentaje: 100%;
+$border-radius: 10px;
+
+.tech-div {
+  margin-left: 100px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.tech-span {
+  background-color: $green;
+  border-radius: $border-radius;
+  width: $max-percentaje;
+  max-width: $tech-span-width;
+  height: $tech-span-height;
+  max-height: $max-percentaje;
+  position: relative;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    border: 2px solid $green;
+    border-radius: $border-radius;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: $max-percentaje;
+    max-width: $tech-span-width;
+    height: $tech-span-height;
+    max-height: $max-percentaje;
+  }
+}
+
+.img-tech {
+  margin: 10px;
+  width: $max-percentaje;
+  max-width: $tech-logo-size;
+  height: $max-percentaje;
+  max-height: $tech-logo-size;
+}
+
+.tech-descr {
+  margin: 5px;
+  text-align: center;
+}
