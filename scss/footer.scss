@@ -6,6 +6,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top: 50px;
+  padding: 10px;
 }
 
 .slogan,
@@ -17,6 +19,8 @@
 .slogan {
   font-size: $text-medium;
   padding-top: 5px;
+  text-transform: uppercase;
+  margin-top: 25px;
 }
 
 .brand {
@@ -27,5 +31,4 @@
 .copyright {
   font-size: 10px;
   align-self: flex-end;
-  padding: 10px;
 }

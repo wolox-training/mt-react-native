@@ -1,42 +1,29 @@
 $tech-logo-size: 100px;
 
 .techs-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 100px;
+  display: grid;
+  margin: 0 auto;
+  width: 900px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 50px;
+  grid-template-areas:
+    "techcol tech tech"
+    "techcol tech tech";
 }
 
-.tech{
+.tech,
+.tech-col {
   align-items: center;
-  background-color: $green;
-  border-radius: 10px;
+  background-color: $white;
   display: flex;
   flex-direction: column;
-  height: 350px;
-  justify-content: space-evenly;
-  margin: 15px;
-  max-width: 225px;
+  height: 100%;
+  justify-content: center;
   padding: 0 15px 15px;
   position: relative;
   width: 100%;
-
-  &::before {
-    border: 2px solid $green;
-    border-radius: 10px;
-    bottom: 5px;
-    content: '';
-    height: 350px;
-    max-width: 225px;
-    position: absolute;
-    right: 5px;
-    width: 100%;
-    z-index: -1;
-    transition: all 1s ease;
-  }
-
-  &:hover::before {
-    transform: translate(15px, 15px);
-  }
+  max-width: 225px;
 }
 
 .img-tech {
@@ -59,4 +46,9 @@ $tech-logo-size: 100px;
 
 .tech-title {
   font-size: $text-medium;
+}
+
+.tech-col {
+  grid-area: techcol;
+  border-right: 2px solid $green;
 }
