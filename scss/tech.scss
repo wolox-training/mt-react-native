@@ -4,12 +4,9 @@ $tech-logo-size: 100px;
   display: grid;
   margin: 0 auto;
   width: 900px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: 1fr 1fr;
   grid-row-gap: 50px;
-  grid-template-areas:
-    "techcol tech tech"
-    "techcol tech tech";
 }
 
 .tech,
@@ -49,6 +46,7 @@ $tech-logo-size: 100px;
 }
 
 .tech-col {
-  grid-area: techcol;
+  grid-column: 1;
+  grid-row: 1/3;
   border-right: 2px solid $green;
 }
