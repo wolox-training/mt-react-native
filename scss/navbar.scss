@@ -1,0 +1,24 @@
+$nav-height: 90px;
+
+.navbar {
+  align-items: center;
+  background-color: $white;
+  display: flex;
+  height: $nav-height;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+.navbar-text {
+  color: $black;
+  font-size: $text-big;
+  padding: 20px;
+}
+
+.navbar-img {
+  height: 90px;
+  padding: 20px;
+  width: 200px;
+}

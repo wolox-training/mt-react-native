@@ -5,7 +5,9 @@ $title-decoration-width: 70px;
   color: $black;
   font-size: $text-big;
   position: relative;
-  margin: 50px;
+  margin-top: 150px;
+  margin-left: 50px;
+  margin-bottom: 50px;
   padding: 10px;
 
   &::before {
