@@ -7,6 +7,7 @@ $nav-height: 90px;
   height: $nav-height;
   justify-content: space-between;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1;
   -webkit-box-shadow: 0 8px 6px -6px $grey;
@@ -23,4 +24,10 @@ $nav-height: 90px;
 .navbar-img {
   width: 200px;
   padding: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbar-text {
+    display: none;
+  }
 }
