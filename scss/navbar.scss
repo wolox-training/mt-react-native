@@ -9,7 +9,9 @@ $nav-height: 90px;
   position: fixed;
   width: 100%;
   z-index: 1;
-  border-bottom: 2px solid $grey;
+  -webkit-box-shadow: 0 8px 6px -6px $grey;
+  -moz-box-shadow: 0 8px 6px -6px $grey;
+  box-shadow: 0 8px 6px -6px $grey;
 }
 
 .navbar-text {
