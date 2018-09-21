@@ -16,15 +16,9 @@ $tech-logo-size: 100px;
   justify-content: space-evenly;
   margin: 15px;
   max-width: 225px;
-  max-height: 100%;
   padding: 0 15px 15px;
   position: relative;
   width: 100%;
-
-  &:hover::before {
-    top: 5px;
-    left: 5px;
-  }
 
   &::before {
     border: 2px solid $green;
@@ -33,11 +27,15 @@ $tech-logo-size: 100px;
     content: '';
     height: 350px;
     max-width: 225px;
-    max-height: 100%;
     position: absolute;
     right: 5px;
     width: 100%;
-    z-index: -1;
+    z-index: 2;
+    transition: all 1s ease;
+  }
+
+  &:hover::before {
+    transform: translate(15px, 15px);
   }
 }
 
