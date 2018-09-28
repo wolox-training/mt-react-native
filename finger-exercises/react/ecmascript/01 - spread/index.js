@@ -1,38 +1,28 @@
 import { isArray } from './utils';
 
-export function min() {
-  let minimo;
-  let i;
+export function min(...args) {
+  let minumum;
 
-  if (arguments === undefined || arguments.length === 0) {
+  if (args === undefined || args.length === 0) {
     return undefined;
   }
 
-  if (!isArray(...arguments)) {
-    minimo = Math.min(...arguments);
+  if (!isArray(...args)) {
+    minumum = Math.min(...args);
   } else {
-    let arr1=[];
-    for (i = 0; i < arguments.length; i++) {
-      arr1.push(...(arguments[i]));
-    }
-    minimo = Math.min(...arr1);
+    const arr1 = args.reduce((a, b) => [...a, ...b], []);
+    minumum = Math.min(...arr1);
   }
-  return minimo;
+  return minumum;
 }
 
 export function copy(args) {
   let objClone;
-  let i;
-  if (!isArray(...arguments)) {
+  if (!isArray(args)) {
     objClone = { ...args };
   } else {
-    const arr1 = [];
-    for (i = 0; i < arguments.length; i++) {
-      arr1.push(...(arguments[i]));
-    }
-    objClone = arr1;
+    objClone = args.reduce((a, b) => [...a, ...b], []);
   }
-
   return objClone;
 }
 

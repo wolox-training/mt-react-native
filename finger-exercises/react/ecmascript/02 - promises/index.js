@@ -6,10 +6,8 @@ export function delay(time) {
     if (time > 1000) {
       reject(new Error('This time is too much !'));
     }
-    const delayedTime = function delayed() {
-      resolve(Date.now() - start);
-    };
-    setInterval(delayedTime, time);
+    const delayedFunction = () => resolve(Date.now() - start);
+    setTimeout(delayedFunction, time);
   });
 }
 
@@ -19,9 +17,7 @@ export async function asyncDelay(time) {
     if (time > 1000) {
       reject(new Error('This time is too much !'));
     }
-    const delayedTime = function delayed() {
-      resolve(Date.now() - start);
-    };
-    setInterval(delayedTime, time);
+    const delayedFunction = () => resolve(Date.now() - start);
+    setTimeout(delayedFunction, time);
   });
 }
