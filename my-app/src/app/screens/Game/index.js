@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import Board from './board';
-import calculateWinner from './utils/utils';
+import calculateWinner from '../../utils/utils';
+
+import Board from './components/Board';
 
 class Game extends Component {
   state = {
