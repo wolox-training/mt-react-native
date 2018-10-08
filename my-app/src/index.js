@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import Game from './app/screens/Game';
 import './index.css';
-import store from './redux/store';
+import { store } from './redux/store';
 
 const App = () => (
   <Provider store={store}>

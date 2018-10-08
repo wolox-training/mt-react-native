@@ -1,47 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import calculateWinner from '../../utils/utils';
+import { actions } from '../../../redux/game/actions';
 
 import Board from './components/Board';
 
 class Game extends Component {
-  state = {
-    history: [{ squares: Array(9).fill(null) }],
-    xIsNext: true,
-    stepNumber: 0
-  };
-
   handleClick = i => {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[history.length - 1];
-    const squares = current.squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      history: history.concat([
-        {
-          squares: squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
-    });
+    this.props.dispatch({ type: actions.handleClick, pos: i });
   };
 
-  jumpTo = step => {
-    this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0
-    });
+  jumpTo = stepNumber => {
+    this.props.dispatch({ type: actions.jumpTo, stepNumber });
   };
 
   render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const history = this.props.history;
+    const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
-
     const moves = history.map((step, move) => {
       const desc = move ? 'Go to move # ' + move : 'Go to the start of the game';
       return (
@@ -55,7 +32,7 @@ class Game extends Component {
     if (winner) {
       status = 'Winner: ' + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Next player: ' + (this.props.xIsNext ? 'X' : 'O');
     }
 
     return (
@@ -72,4 +49,10 @@ class Game extends Component {
   }
 }
 
-export default Game;
+const mapStateToProps = state => ({
+  history: state.history,
+  xIsNext: state.xIsNext,
+  stepNumber: state.stepNumber
+});
+
+export default connect(mapStateToProps)(Game);
