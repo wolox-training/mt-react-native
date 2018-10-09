@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import LogIn from './layout';
 
-class Login extends Component {
+class RegisterFromContainer extends Component {
+  submit = values => {
+    window.alert(JSON.stringify(values, null, 4));
+  };
   render() {
-    return (
-      <form>
-        <div>
-          <label> E-Mail </label>
-          <Field name="mail" component="input" type="text" />
-        </div>
-        <div>
-          <label> password</label>
-          <Field name="password" component="input" type="password" />
-        </div>
-      </form>
-    );
+    return <LogIn onSubmit={this.submit} />;
   }
 }
 
-Login = reduxForm({ form: 'login' })(Login);
-
-export default Login;
+export default RegisterFromContainer;
