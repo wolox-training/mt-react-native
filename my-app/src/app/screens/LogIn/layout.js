@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+
 import { customInput } from './Components/Fields/index';
+import { required, wrongMail } from './validation/index';
 
 class Login extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
-        <Field name="mail" component={customInput} type="text" label="E-Mail" />
-        <Field name="password" component={customInput} type="password" label="Password" />
+        <Field
+          name="mail"
+          component={customInput}
+          type="text"
+          label="E-Mail"
+          validate={[required, wrongMail]}
+        />
+        <Field
+          name="password"
+          component={customInput}
+          type="password"
+          label="Password"
+          validate={[required]}
+        />
         <button type="submit">Sign In</button>
       </form>
     );
