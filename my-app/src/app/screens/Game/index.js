@@ -6,14 +6,15 @@ import { actions } from '../../../redux/game/actions';
 import Board from './components/Board';
 
 class Game extends Component {
+  /*
   handleClick = i => {
-    this.props.dispatch({ type: actions.SUBMIT_PLAY, pos: i });
+    this.props.dispatch({ type: actions.SUBMIT_PLAY, payload: { pos: i } });
   };
 
   jumpTo = stepNumber => {
-    this.props.dispatch({ type: actions.JUMP_TO, stepNumber });
+    this.props.dispatch({ type: actions.JUMP_TO, payload: { step: stepNumber } });
   };
-
+*/
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -21,7 +22,7 @@ class Game extends Component {
       const desc = move ? 'Go to move # ' + move : 'Go to the start of the game';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
@@ -29,7 +30,7 @@ class Game extends Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
         </div>
         <div className="game-info">
           <div>{this.props.status}</div>
@@ -47,4 +48,14 @@ const mapStateToProps = state => ({
   status: state.status
 });
 
-export default connect(mapStateToProps)(Game);
+const mapDispatchToProps = dispatch => ({
+  handleClick: i => {
+    dispatch({ type: actions.SUBMIT_PLAY, payload: { pos: i } });
+  },
+
+  jumpTo: stepNumber => {
+    dispatch({ type: actions.JUMP_TO, payload: { stepNumber } });
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

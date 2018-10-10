@@ -17,11 +17,11 @@ function reducer(state = initialState, action) {
       const squares = [...currentPlay.squares];
       let msj;
 
-      if (calculateWinner(currentPlay.squares) || squares[action.pos]) {
+      if (calculateWinner(currentPlay.squares) || squares[action.payload.pos]) {
         return state;
       }
 
-      squares[action.pos] = state.xIsNext ? 'X' : 'O';
+      squares[action.payload.pos] = state.xIsNext ? 'X' : 'O';
 
       if (calculateWinner(squares)) {
         msj = 'Winner: ' + (state.xIsNext? 'X' : 'O');
@@ -43,7 +43,7 @@ function reducer(state = initialState, action) {
     case actions.JUMP_TO: {
       return {
         history: state.history,
-        stepNumber: action.stepNumber,
+        stepNumber: action.payload.stepNumber,
         xIsNext: state.xIsNext,
         status: state.status
       };
