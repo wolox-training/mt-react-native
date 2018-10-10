@@ -1,4 +1,4 @@
 export const actions = {
-  HANDLE_CLICK: 'HANDLECLICK',
-  JUMP_TO: 'JUMPTO'
+  SUBMIT_PLAY: 'SUBMIT_PLAY',
+  JUMP_TO: 'JUMP_TO'
 };
