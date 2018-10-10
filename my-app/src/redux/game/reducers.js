@@ -12,8 +12,8 @@ function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.HANDLE_CLICK: {
       const history = state.history.slice(0, state.stepNumber + 1);
-      const current = history[history.length - 1];
-      const squares = [...current.squares];
+      const currentPlay = history[history.length - 1];
+      const squares = [...currentPlay.squares];
       if (calculateWinner(squares) || squares[action.pos]) {
         return state;
       }
