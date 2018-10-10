@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { actions } from '../../../redux/game/actions';
+import { actionCreators } from '../../../redux/game/actions';
 
 import Board from './components/Board';
 
 class Game extends Component {
-  /*
-  handleClick = i => {
-    this.props.dispatch({ type: actions.SUBMIT_PLAY, payload: { pos: i } });
-  };
-
-  jumpTo = stepNumber => {
-    this.props.dispatch({ type: actions.JUMP_TO, payload: { step: stepNumber } });
-  };
-*/
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -50,11 +41,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleClick: i => {
-    dispatch({ type: actions.SUBMIT_PLAY, payload: { pos: i } });
+    dispatch({ type: actionCreators.SUBMIT_PLAY, payload: { pos: i } });
   },
 
   jumpTo: stepNumber => {
-    dispatch({ type: actions.JUMP_TO, payload: { stepNumber } });
+    dispatch({ type: actionCreators.JUMP_TO, payload: { stepNumber } });
   }
 });
 

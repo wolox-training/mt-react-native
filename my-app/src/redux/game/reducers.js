@@ -1,6 +1,6 @@
 import calculateWinner from '../../app/utils/utils';
 
-import { actions } from './actions';
+import { actionCreators } from './actions';
 
 const initialState = {
   history: [{ squares: Array(9).fill(null) }],
@@ -11,7 +11,7 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case actions.SUBMIT_PLAY: {
+    case actionCreators.SUBMIT_PLAY: {
       const history = state.history.slice(0, state.stepNumber + 1);
       const currentPlay = history[history.length - 1];
       const squares = [...currentPlay.squares];
@@ -40,7 +40,7 @@ function reducer(state = initialState, action) {
         status: msj
       };
     }
-    case actions.JUMP_TO: {
+    case actionCreators.JUMP_TO: {
       return {
         history: state.history,
         stepNumber: action.payload.stepNumber,
