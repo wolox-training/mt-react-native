@@ -1,4 +1,4 @@
 export const actions = {
-  handleClick: 'HANDLECLICK',
-  jumpTo: 'JUMPTO'
+  HANDLE_CLICK: 'HANDLECLICK',
+  JUMP_TO: 'JUMPTO'
 };

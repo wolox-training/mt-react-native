@@ -8,11 +8,11 @@ import Board from './components/Board';
 
 class Game extends Component {
   handleClick = i => {
-    this.props.dispatch({ type: actions.handleClick, pos: i });
+    this.props.dispatch({ type: actions.HANDLE_CLICK, pos: i });
   };
 
   jumpTo = stepNumber => {
-    this.props.dispatch({ type: actions.jumpTo, stepNumber });
+    this.props.dispatch({ type: actions.JUMP_TO, stepNumber });
   };
 
   render() {
