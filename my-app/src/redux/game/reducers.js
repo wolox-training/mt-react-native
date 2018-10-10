@@ -5,7 +5,8 @@ import { actions } from './actions';
 const initialState = {
   history: [{ squares: Array(9).fill(null) }],
   xIsNext: true,
-  stepNumber: 0
+  stepNumber: 0,
+  status: 'Next player: X'
 };
 
 function reducer(state = initialState, action) {
@@ -14,10 +15,20 @@ function reducer(state = initialState, action) {
       const history = state.history.slice(0, state.stepNumber + 1);
       const currentPlay = history[history.length - 1];
       const squares = [...currentPlay.squares];
-      if (calculateWinner(squares) || squares[action.pos]) {
+      let msj;
+
+      if (calculateWinner(currentPlay.squares) || squares[action.pos]) {
         return state;
       }
+
       squares[action.pos] = state.xIsNext ? 'X' : 'O';
+
+      if (calculateWinner(squares)) {
+        msj = 'Winner: ' + (state.xIsNext? 'X' : 'O');
+      } else {
+        msj = 'Next player: ' + (!state.xIsNext ? 'X' : 'O');
+      }
+
       return {
         history: history.concat([
           {
@@ -25,14 +36,16 @@ function reducer(state = initialState, action) {
           }
         ]),
         stepNumber: history.length,
-        xIsNext: !state.xIsNext
+        xIsNext: !state.xIsNext,
+        status: msj
       };
     }
     case actions.JUMP_TO: {
       return {
         history: state.history,
         stepNumber: action.stepNumber,
-        xIsNext: state.stepNumber % 2 === 0
+        xIsNext: state.xIsNext,
+        status: state.status
       };
     }
     default:
