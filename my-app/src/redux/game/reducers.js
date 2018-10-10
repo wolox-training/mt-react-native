@@ -1,4 +1,4 @@
-import calculateWinner from '../../app/utils//utils';
+import calculateWinner from '../../app/utils/utils';
 
 import { actions } from './actions';
 
