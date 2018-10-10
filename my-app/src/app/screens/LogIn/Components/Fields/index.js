@@ -1,12 +1,17 @@
 import React from 'react';
+import cx from 'classnames';
+
+import styles from './styles.scss';
 
 export const customInput = props => {
   const { label, input, type, meta } = props;
   return (
-    <div>
-      <label>{props.label}</label>
+    <div className={cx(styles.customInputContainer)}>
       <input {...props.input} type={props.type} />
-      {meta.error && meta.touched && <div style={{ color: 'red' }}>{props.label + meta.error}</div>}
+      <label>{props.label}</label>
+      {meta.error &&
+        meta.touched &&
+        !meta.active && <div className={cx(styles.errorText)}> {props.label + meta.error}</div>}
     </div>
   );
 };

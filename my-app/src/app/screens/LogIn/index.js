@@ -4,8 +4,8 @@ import LogIn from './layout';
 class RegisterFromContainer extends Component {
   getInitialValues = () => {
     return {
-      mail: 'example@wolox.com.ar',
-      password: 'ponele'
+      mail: '',
+      password: ''
     };
   };
 

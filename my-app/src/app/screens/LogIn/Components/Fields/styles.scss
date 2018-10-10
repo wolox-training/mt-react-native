@@ -1,0 +1,91 @@
+form {
+  max-width: 320px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+input,
+label,
+button[type='submit'] {
+  font-size: 20px;
+}
+
+input {
+  border-width: 0;
+  border-bottom: 3px solid black;
+  border-radius: 0;
+}
+
+input + label {
+  transition: all 0.2s;
+}
+
+input + label {
+  position: absolute;
+  left: 0;
+  top: -12px;
+  pointer-events: none;
+  color: gray;
+}
+
+input:focus + label,
+.dirty input + label {
+  font-size: 12px;
+  top: -12px;
+  color: black;
+}
+
+input {
+  outline: 0;
+  padding: 0;
+}
+
+input,
+label,
+button[type='submit'] {
+  font-size: 20px;
+}
+
+label {
+  font-size: 12px;
+}
+
+.custom-input-container{
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+input,
+button[type='submit'] {
+  width: 100%;
+}
+
+input {
+  border-color: transparent transparent black transparent;
+  border-bottom: 3px solid black;
+}
+
+button[type='submit']{
+  background-color: orange;
+  color: white;
+}
+
+.error-text {
+  background-color: red;
+  color: white;
+  margin-top: 10px;
+  position: relative;
+
+  &::before {
+    content: '';
+    border-color: transparent transparent red transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 7px;
+    position: absolute;
+    left: 20px;
+    top: -8px;
+  }
+}
