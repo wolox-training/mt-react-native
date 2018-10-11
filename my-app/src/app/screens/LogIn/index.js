@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import api from '../../../config/api';
 import Game from '../Game/index';
-import { markAsLoggedIn } from '../../../redux/login/actions';
+import { MakeALogInRequest } from '../../../redux/login/actions';
 
 import LogIn from './layout';
 
 class RegisterFromContainer extends Component {
   alertLogIn = (res, values) => {
     if (res.ok && res.data.length > 0) {
-      this.props.dispatch(markAsLoggedIn(values));
+      this.props.dispatch(MakeALogInRequest(values));
     } else {
       window.alert(JSON.stringify('Credenciales incorrectas, por favor intentelo nuevamente.', null, 4));
     }
