@@ -1,38 +1,37 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import api from '../../../config/api';
+import Game from '../Game/index';
+import { markAsLoggedIn } from '../../../redux/login/actions';
 
 import LogIn from './layout';
 
 class RegisterFromContainer extends Component {
-  getInitialValues = () => {
-    return {
-      mail: '',
-      password: ''
-    };
-  };
-
-  alertLogIn = res => {
+  alertLogIn = (res, values) => {
     if (res.ok && res.data.length > 0) {
-      window.alert(JSON.stringify('Log in correcto', null, 4));
+      this.props.dispatch(markAsLoggedIn(values));
     } else {
       window.alert(JSON.stringify('Credenciales incorrectas, por favor intentelo nuevamente.', null, 4));
     }
   };
 
   submit = values => {
-    // const api = create({
-    //   baseURL: 'http://localhost:3004',
-    //   headers: { Accept: 'application/vnd.github.v3+json' }
-    // });
-
     const queryParams = { user: values.mail, password: values.password };
-    api.get('/users', queryParams).then(response => this.alertLogIn(response));
+    api.get('/users', queryParams).then(response => this.alertLogIn(response, values));
   };
 
   render() {
-    return <LogIn onSubmit={this.submit} initialValues={this.getInitialValues()} />;
+    return this.props.logged ? <Game /> : <LogIn onSubmit={this.submit} />;
   }
 }
 
-export default RegisterFromContainer;
+const mapStateToProps = state => ({
+  logged: state.loginReducer.logged,
+  mail: state.loginReducer.mail,
+  password: state.loginReducer.password,
+  sesion: state.loginReducer.sesion,
+  header: state.loginReducer.header
+});
+
+export default connect(mapStateToProps)(RegisterFromContainer);

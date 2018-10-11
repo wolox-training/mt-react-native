@@ -1,11 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import reducer from './game/reducers';
+import gameReducer from './game/reducers';
+import loginReducer from './login/reducers';
 
 const reducers = {
-  gameReducer: reducer,
-  form: formReducer
+  gameReducer,
+  form: formReducer,
+  loginReducer
 };
 
 const rootReducer = combineReducers(reducers);
