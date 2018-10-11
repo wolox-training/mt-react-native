@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import api from '../../../config/api';
+import { bindActionCreators } from '../../../../../../../../Library/Caches/typescript/3.1/node_modules/redux';
 import Game from '../Game/index';
-import { MakeALogInRequest } from '../../../redux/login/actions';
+import { makeALogInRequest } from '../../../redux/login/actions';
 
 import LogIn from './layout';
 
 class RegisterFromContainer extends Component {
-  alertLogIn = (res, values) => {
-    if (res.ok && res.data.length > 0) {
-      this.props.dispatch(MakeALogInRequest(values));
-    } else {
-      window.alert(JSON.stringify('Credenciales incorrectas, por favor intentelo nuevamente.', null, 4));
-    }
-  };
-
   submit = values => {
-    const queryParams = { user: values.mail, password: values.password };
-    api.get('/users', queryParams).then(response => this.alertLogIn(response, values));
+    this.props.makeALogInRequest(values);
   };
 
   render() {
@@ -34,4 +25,13 @@ const mapStateToProps = state => ({
   header: state.loginReducer.header
 });
 
-export default connect(mapStateToProps)(RegisterFromContainer);
+function mapDispatchToProps(dispatch) {
+  return {
+    makeALogInRequest: bindActionCreators(makeALogInRequest, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RegisterFromContainer);
