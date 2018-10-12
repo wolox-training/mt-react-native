@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Square({ value, onClick, ...props }) {
+function Square({ value, onClick, ...props}) {
   return (
     <button className="square" onClick={onClick}>
       {value}

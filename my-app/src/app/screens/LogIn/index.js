@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import { bindActionCreators } from '../../../../../../../../Library/Caches/typescript/3.1/node_modules/redux';
 import Game from '../Game/index';
 import { makeALogInRequest } from '../../../redux/login/actions';
 
@@ -19,10 +19,7 @@ class RegisterFromContainer extends Component {
 
 const mapStateToProps = state => ({
   logged: state.loginReducer.logged,
-  mail: state.loginReducer.mail,
-  password: state.loginReducer.password,
-  sesion: state.loginReducer.sesion,
-  header: state.loginReducer.header
+  Authorization: state.loginReducer.Authorization
 });
 
 function mapDispatchToProps(dispatch) {
