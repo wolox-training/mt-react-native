@@ -13,7 +13,7 @@ class RegisterFromContainer extends Component {
   };
 
   render() {
-    return this.props.logged ? <Game /> : <LogIn onSubmit={this.submit} />;
+    return <LogIn onSubmit={this.submit} />;
   }
 }
 
