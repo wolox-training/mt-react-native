@@ -3,8 +3,6 @@ import { actions } from './actions';
 const initialState = {
   user: '',
   password: '',
-  sesion: '',
-  header: '',
   logged: false
 };
 
@@ -14,8 +12,6 @@ function LogInReducer(state = initialState, action) {
       const newState = {
         user: action.payload.user,
         password: action.payload.password,
-        sesion: '',
-        header: '',
         logged: true
       };
       return newState;
