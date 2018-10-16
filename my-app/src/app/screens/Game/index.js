@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { actionCreators } from '../../../redux/game/actions';
+import actionCreators from '../../../redux/game/actions';
 
 import Board from './components/Board';
 
@@ -41,12 +41,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleClick: i => {
-    dispatch({ type: actionCreators.SUBMIT_PLAY, payload: { pos: i } });
+    dispatch(actionCreators.submitPlay(i));
   },
 
   jumpTo: stepNumber => {
-    dispatch({ type: actionCreators.JUMP_TO, payload: { stepNumber } });
+    dispatch(actionCreators.jumpTo(stepNumber));
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Game);
