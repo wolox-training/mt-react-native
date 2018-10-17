@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-function AuthenticatedRoute(props) {
-  return props.authorization ? (
-    <Route exact path={props.PATH} component={props.iflogged} />
+function AuthenticatedRoute({ authorization, defaultComp, ifLoggedComp, ...props }) {
+  return authorization ? (
+    <Route exact path={props.PATH} component={ifLoggedComp} />
   ) : (
-    <Route exact path={props.PATH} component={props.default} />
+    <Route exact path={props.PATH} component={defaultComp} />
   );
 }
 
