@@ -5,7 +5,7 @@ export const actions = {
 };
 
 function setCredentialsInLocalStorage(response) {
-  localStorage.setItem('Authorization', response.data.token);
+  localStorage.setItem('authorization', response.data.token);
 }
 
 export const makeALogInRequest = values => {

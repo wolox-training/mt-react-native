@@ -12,8 +12,7 @@ class RegisterFromContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  logged: state.login.logged,
-  Authorization: state.login.Authorization
+  authorization: state.login.authorization
 });
 
 function mapDispatchToProps(dispatch) {
