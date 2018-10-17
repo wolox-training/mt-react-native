@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts';
+
+import styles from './Components/Fields/styles.scss';
 import { customInput } from './Components/Fields/index';
 import { required, wrongMail, minLength } from './validation/index';
 
@@ -9,7 +11,7 @@ class Login extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
+      <form className={styles.Form} onSubmit={handleSubmit}>
         <Field
           name={MAIL_FIELD_NAME}
           component={customInput}
@@ -24,7 +26,9 @@ class Login extends Component {
           label="Password"
           validate={[required, minLength]}
         />
-        <button type="submit">Sign In</button>
+        <button className={styles.Button} type="submit">
+          Sign In
+        </button>
       </form>
     );
   }

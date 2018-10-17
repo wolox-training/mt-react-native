@@ -1,27 +1,27 @@
-form {
+.Form {
   max-width: 320px;
   padding: 30px;
   margin: auto;
   margin-top: 50px;
 }
 
-input,
-label,
-button[type='submit'] {
+.Input,
+.Label,
+.Button[type='submit'] {
   font-size: 20px;
 }
 
-input {
+.Input {
   border-width: 0;
   border-bottom: 3px solid black;
   border-radius: 0;
 }
 
-input + label {
+.Input + .Label {
   transition: all 0.2s;
 }
 
-input + label {
+.Input + .Label {
   position: absolute;
   left: 0;
   top: -12px;
@@ -29,25 +29,25 @@ input + label {
   color: gray;
 }
 
-input:focus + label,
-.dirty input + label {
+.Input:focus + .Label,
+.dirty Input + .Label {
   font-size: 12px;
   top: -12px;
   color: black;
 }
 
-input {
+.Input {
   outline: 0;
   padding: 0;
 }
 
-input,
-label,
-button[type='submit'] {
+.Input,
+.Label,
+.Button[type='submit'] {
   font-size: 20px;
 }
 
-label {
+.Label {
   font-size: 12px;
 }
 
@@ -56,17 +56,17 @@ label {
   margin: 0 0 25px 0;
 }
 
-input,
-button[type='submit'] {
+.Input,
+.Button[type='submit'] {
   width: 100%;
 }
 
-input {
+.Input {
   border-color: transparent transparent black transparent;
   border-bottom: 3px solid black;
 }
 
-button[type='submit']{
+.Button[type='submit']{
   background-color: lightseagreen;
   color: white;
 }
