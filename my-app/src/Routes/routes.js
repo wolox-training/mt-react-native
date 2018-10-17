@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AuthenticatedRounter from './AuthenticatedRoute';
 
-const Routes = () => {
+function Routes() {
   return (
     <Router>
       <Switch>
@@ -12,6 +12,6 @@ const Routes = () => {
       </Switch>
     </Router>
   );
-};
+}
 
 export default Routes;
