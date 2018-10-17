@@ -11,7 +11,7 @@ class Login extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form className={styles.Form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <Field
           name={MAIL_FIELD_NAME}
           component={customInput}
@@ -26,7 +26,7 @@ class Login extends Component {
           label="Password"
           validate={[required, minLength]}
         />
-        <button className={styles.Button} type="submit">
+        <button className={styles.button} type="submit">
           Sign In
         </button>
       </form>

@@ -1,27 +1,27 @@
-.Form {
+.form {
   max-width: 320px;
   padding: 30px;
   margin: auto;
   margin-top: 50px;
 }
 
-.Input,
-.Label,
-.Button[type='submit'] {
+.input,
+.label,
+.button[type='submit'] {
   font-size: 20px;
 }
 
-.Input {
+.input {
   border-width: 0;
   border-bottom: 3px solid black;
   border-radius: 0;
 }
 
-.Input + .Label {
+.input + .label {
   transition: all 0.2s;
 }
 
-.Input + .Label {
+.input + .label {
   position: absolute;
   left: 0;
   top: -12px;
@@ -29,25 +29,25 @@
   color: gray;
 }
 
-.Input:focus + .Label,
-.dirty Input + .Label {
+.input:focus + .label,
+.dirty input + .label {
   font-size: 12px;
   top: -12px;
   color: black;
 }
 
-.Input {
+.input {
   outline: 0;
   padding: 0;
 }
 
-.Input,
-.Label,
-.Button[type='submit'] {
+.input,
+.label,
+.button[type='submit'] {
   font-size: 20px;
 }
 
-.Label {
+.label {
   font-size: 12px;
 }
 
@@ -56,17 +56,17 @@
   margin: 0 0 25px 0;
 }
 
-.Input,
-.Button[type='submit'] {
+.input,
+.button[type='submit'] {
   width: 100%;
 }
 
-.Input {
+.input {
   border-color: transparent transparent black transparent;
   border-bottom: 3px solid black;
 }
 
-.Button[type='submit']{
+.button[type='submit']{
   background-color: lightseagreen;
   color: white;
 }
