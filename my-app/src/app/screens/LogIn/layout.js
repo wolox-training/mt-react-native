@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts';
 import { customInput } from './Components/Fields/index';
 import { required, wrongMail, minLength } from './validation/index';
 
@@ -10,14 +11,14 @@ class Login extends Component {
     return (
       <form onSubmit={handleSubmit}>
         <Field
-          name="mail"
+          name={MAIL_FIELD_NAME}
           component={customInput}
           type="text"
           label="E-Mail"
           validate={[required, wrongMail]}
         />
         <Field
-          name="password"
+          name={PASSWORD_FIELD_NAME}
           component={customInput}
           type="password"
           label="Password"
