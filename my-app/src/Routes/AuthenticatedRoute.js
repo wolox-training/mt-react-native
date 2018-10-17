@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 function AuthenticatedRoute(props) {
-  return props.auth !== '' ? (
+  return props.authorization ? (
     <Route exact path={props.PATH} component={props.iflogged} />
   ) : (
     <Route exact path={props.PATH} component={props.default} />
@@ -11,7 +11,7 @@ function AuthenticatedRoute(props) {
 }
 
 const mapStateToProps = state => ({
-  auth: state.login.authorization
+  authorization: state.login.authorization
 });
 
 export default connect(mapStateToProps)(AuthenticatedRoute);
