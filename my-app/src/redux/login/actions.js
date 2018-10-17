@@ -20,7 +20,7 @@ export const makeALogInRequest = values => {
           payload: { authorization: response.data.token }
         });
       } else {
-        window.alert(JSON.stringify('Credenciales incorrectas, por favor intentelo nuevamente.', null, 4));
+        window.alert('Credenciales incorrectas, por favor intentelo nuevamente.');
       }
     });
   };
