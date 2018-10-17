@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
-import Game from '../app/screens/Game/index';
-import RegisterFromContainer from '../app/screens/LogIn/index';
-
-function AuthenticatedRoute({ auth }) {
-  return auth !== '' ? <Game /> : <RegisterFromContainer />;
+function AuthenticatedRoute(props) {
+  return props.auth !== '' ? (
+    <Route exact path={props.PATH} component={props.iflogged} />
+  ) : (
+    <Route exact path={props.PATH} component={props.default} />
+  );
 }
 
 const mapStateToProps = state => ({
