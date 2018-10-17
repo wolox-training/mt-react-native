@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { PATH } from '../app/utils/consts';
+import { PATH } from '../app/utils/consts/routes';
 import Game from '../app/screens/Game/index';
 import RegisterFromContainer from '../app/screens/LogIn/index';
 

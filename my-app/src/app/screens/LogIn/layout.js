@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts';
+import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts/fieldNames';
 
 import styles from './Components/Fields/styles.scss';
 import customInput from './Components/Fields/index';
