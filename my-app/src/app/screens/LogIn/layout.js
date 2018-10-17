@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts';
 
 import styles from './Components/Fields/styles.scss';
-import { customInput } from './Components/Fields/index';
+import customInput from './Components/Fields/index';
 import { required, wrongMail, minLength } from './validation/index';
 
 class Login extends Component {

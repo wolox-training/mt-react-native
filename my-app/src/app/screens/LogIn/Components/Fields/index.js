@@ -2,15 +2,16 @@ import React from 'react';
 
 import styles from './styles.scss';
 
-export const customInput = props => {
-  const { label, input, type, meta } = props;
+function customInput({ label, input, type, meta }) {
   return (
     <div className={styles.customInputContainer}>
-      <input className={styles.Input} {...props.input} type={props.type} />
-      <label className={styles.Label}>{props.label}</label>
+      <input className={styles.Input} {...input} type={type} />
+      <label className={styles.Label}>{label}</label>
       {meta.error &&
         meta.touched &&
-        !meta.active && <div className={styles.errorText}> {props.label + meta.error}</div>}
+        !meta.active && <div className={styles.errorText}> {label + meta.error}</div>}
     </div>
   );
 };
+
+export default customInput;
