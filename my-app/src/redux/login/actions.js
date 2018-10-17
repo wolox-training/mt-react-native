@@ -17,7 +17,7 @@ export const makeALogInRequest = values => {
         api.setHeaders({ ' Authorization': response.data.token });
         dispatch({
           type: actions.LOG_IN,
-          payload: { Authorization: response.data.token }
+          payload: { authorization: response.data.token }
         });
       } else {
         window.alert(JSON.stringify('Credenciales incorrectas, por favor intentelo nuevamente.', null, 4));
