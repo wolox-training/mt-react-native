@@ -14,7 +14,7 @@ export const makeALogInRequest = values => {
     api.get('/users', queryParams).then(response => {
       if (response.ok && response.data.length > 0) {
         setCredentialsInLocalStorage(response);
-        api.setHeaders({ ' Authorization': response.data.token });
+        api.setHeaders({ Authorization: response.data.token });
         dispatch({
           type: actions.LOG_IN,
           payload: { authorization: response.data.token }

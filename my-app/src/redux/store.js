@@ -3,13 +3,13 @@ import { reducer as formReducer } from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import gameReducer from './game/reducers';
-import loginReducer from './login/reducers';
+import game from './game/reducers';
+import login from './login/reducers';
 
 const reducers = {
-  gameReducer,
+  game,
   form: formReducer,
-  loginReducer
+  login
 };
 
 const rootReducer = combineReducers(reducers);

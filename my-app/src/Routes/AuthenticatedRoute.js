@@ -9,7 +9,7 @@ const AuthenticatedRoute = props => {
 };
 
 const mapStateToProps = state => ({
-  logged: state.loginReducer.logged
+  logged: state.login.logged
 });
 
 export default connect(mapStateToProps)(AuthenticatedRoute);

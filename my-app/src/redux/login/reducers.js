@@ -5,7 +5,7 @@ const initialState = {
   logged: false
 };
 
-function LogInReducer(state = initialState, action) {
+function Login(state = initialState, action) {
   switch (action.type) {
     case actions.LOG_IN: {
       return {
@@ -18,4 +18,4 @@ function LogInReducer(state = initialState, action) {
   }
 }
 
-export default LogInReducer;
+export default Login;

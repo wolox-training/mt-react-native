@@ -50,9 +50,9 @@ class Game extends Component {
 }
 
 const mapStateToProps = state => ({
-  history: state.gameReducer.history,
-  xIsNext: state.gameReducer.xIsNext,
-  stepNumber: state.gameReducer.stepNumber
+  history: state.game.history,
+  xIsNext: state.game.xIsNext,
+  stepNumber: state.game.stepNumber
 });
 
 export default connect(mapStateToProps)(Game);
