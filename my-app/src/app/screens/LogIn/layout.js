@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import { MAIL_FIELD_NAME, PASSWORD_FIELD_NAME } from '../../utils/consts/fieldNames';
+import { LOG_IN } from '../../utils/consts/forms';
 
 import styles from './Components/Fields/styles.scss';
 import customInput from './Components/Fields/index';
@@ -34,6 +35,6 @@ class Login extends Component {
   }
 }
 
-Login = reduxForm({ form: 'login' })(Login);
+Login = reduxForm({ form: LOG_IN })(Login);
 
 export default Login;
