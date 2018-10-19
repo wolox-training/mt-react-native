@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 
 import styles from './styles';
 
-export default class Input extends Component {
+class Input extends Component {
   state = {
     text: ''
   };
@@ -39,3 +39,5 @@ export default class Input extends Component {
     );
   }
 }
+
+export default Input;
