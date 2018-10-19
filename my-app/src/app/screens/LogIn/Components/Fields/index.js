@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.scss';
 
-function customInput({ label, input, type, meta }) {
+function CustomInput({ label, input, type, meta }) {
   return (
     <div className={styles.customInputContainer}>
       <input className={styles.input} {...input} type={type} />
@@ -14,4 +14,4 @@ function customInput({ label, input, type, meta }) {
   );
 };
 
-export default customInput;
+export default CustomInput;
