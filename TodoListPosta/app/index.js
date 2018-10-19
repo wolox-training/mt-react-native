@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
-import store from './store/store'
-import TodoApp from './containers/App'
+import store from './store/store';
+import TodoApp from './containers/App';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
       <Provider store={store}>
         <TodoApp />
       </Provider>
-    )
+    );
   }
 }
 

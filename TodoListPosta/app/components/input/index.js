@@ -1,31 +1,31 @@
-import React, { Component } from 'react'
-import { TextInput } from 'react-native'
+import React, { Component } from 'react';
+import { TextInput } from 'react-native';
 
 import styles from './styles';
 
 export default class Input extends Component {
-
   state = {
-    text: '',
-  }
+    text: ''
+  };
 
-  onChangeText = (text) => {
-    this.setState({text})
-  }
+  onChangeText = text => {
+    this.setState({ text });
+  };
 
   onSubmitEditing = () => {
-    const {onSubmit} = this.props
-    const {text} = this.state
+    const { onSubmit } = this.props;
+    const { text } = this.state;
 
-    if (!text) return
-
-    onSubmit(text)
-    this.setState({text: ''})
-  }
+    if (!text) {
+      return;
+    }
+    onSubmit(text);
+    this.setState({ text: '' });
+  };
 
   render() {
-    const {onSubmit, placeholder} = this.props
-    const {text} = this.state
+    const { onSubmit, placeholder } = this.props;
+    const { text } = this.state;
 
     return (
       <TextInput
@@ -36,6 +36,6 @@ export default class Input extends Component {
         onSubmitEditing={this.onSubmitEditing}
         blurOnSubmit={false}
       />
-    )
+    );
   }
 }

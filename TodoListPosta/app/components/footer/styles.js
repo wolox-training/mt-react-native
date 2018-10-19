@@ -1,16 +1,16 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   footer: {
     borderTopWidth: 2,
     borderTopColor: 'grey',
     backgroundColor: 'white',
-    padding: 20,
+    padding: 20
   },
   footText: {
     textAlign: 'center',
-    color: 'red',
-  },
+    color: 'red'
+  }
 });
 
 export default styles;

@@ -1,16 +1,16 @@
-import React from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { View, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-function Checkbox(props) {
+function Checkbox({ onToggle, isChecked }) {
   return (
-    <TouchableOpacity onPress={props.onToggle}>
-    <View style={styles.box}>
-        { props.isChecked && <View style={styles.inner}/> }
-    </View>
+    <TouchableOpacity onPress={onToggle}>
+      <View style={styles.box}>
+        {isChecked && <View style={styles.inner}/>}
+      </View>
     </TouchableOpacity>
-  )
-};
+  );
+}
 
 export default Checkbox;
