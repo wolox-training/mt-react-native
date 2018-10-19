@@ -1,11 +1,8 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import actionCreator from '../../../redux/login/actions';
 
 import LogIn from './layout';
-
-const RegisterFromContainer = props => <LogIn onSubmit={props.makeALogInRequest} />;
 
 const mapStateToProps = state => ({
   authorization: state.login.authorization
@@ -13,7 +10,7 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    makeALogInRequest: value => {
+    onSubmit: value => {
       dispatch(actionCreator.makeALogInRequest(value));
     }
   };
@@ -22,4 +19,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RegisterFromContainer);
+)(LogIn);
