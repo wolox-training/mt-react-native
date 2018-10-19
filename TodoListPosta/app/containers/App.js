@@ -8,29 +8,6 @@ import List from '../components/list/index';
 import Input from '../components/input/index';
 import actionCreators from '../redux/actions';
 
-// const items = [{
-//   label: 'Check email',
-//   completed: true
-//   } , {
-//   label: 'Take a shower',
-//   completed: false
-//   } , {
-//   label: 'Brush teeth',
-//   completed: false
-//   } , {
-//   label: 'Eat breakfast',
-//   completed: false
-//   } , {
-//   label: 'Take a shower',
-//   completed: true
-//   } , {
-//   label: 'Brush teeth',
-//   completed: false
-//   } , {
-//   label: 'Eat breakfast',
-//   completed: true
-// }];
-
 class TodoApp extends Component {
   removeCompleted = () => {
     this.props.dispatch(actionCreators.removeCompleted());
@@ -47,7 +24,7 @@ class TodoApp extends Component {
   addItem = (item) => {
     this.props.dispatch(actionCreators.addItem(item));
   }
-  
+    
   render() {
     return (
       <View style={styles.container}>
