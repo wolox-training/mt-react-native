@@ -3,10 +3,10 @@ import { TouchableOpacity, Text } from 'react-native';
 
 import styles from './styles';
 
-function Footer(props) {
+function Footer({ onRemoveCompleted, children }) {
   return (
-    <TouchableOpacity style={styles.footer} onPress={props.onRemoveCompleted}>
-      <Text style={styles.footText}>{props.children}</Text>
+    <TouchableOpacity style={styles.footer} onPress={onRemoveCompleted}>
+      <Text style={styles.footText}>{children}</Text>
     </TouchableOpacity>
   );
 }
