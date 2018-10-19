@@ -33,23 +33,19 @@ import actionCreators from '../redux/actions';
 
 class TodoApp extends Component {
   removeCompleted = () => {
-    // console.warn('remove all');
     this.props.dispatch(actionCreators.removeCompleted());
   }
 
   toggleItemCompleted = (index) => {
-    // console.warn('item toggled!' + index);
-    this.props.dispatch(actionCreators.toggleItemCompleted());
+    this.props.dispatch(actionCreators.toggleItemCompleted(index));
   }
 
   onRemoveItem = (index) => {
-    // console.warn('item removed!' + index);
-    this.props.dispatch(actionCreators.removeItem());
+    this.props.dispatch(actionCreators.removeItem(index));
   }
 
-  addItem = (index) => {
-    // console.warn('submitting item');
-    this.props.dispatch(actionCreators.addItem());
+  addItem = (item) => {
+    this.props.dispatch(actionCreators.addItem(item));
   }
   
   render() {

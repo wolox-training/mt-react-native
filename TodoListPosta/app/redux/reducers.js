@@ -29,20 +29,24 @@ const reducer = (state = initialState, action) => {
 
 switch(action.type) {
   case types.ADD_ITEM: {
-    console.warn('submitting item');
-    return state;
+    return {...state, items: [...state.items, {label: action.payload.item, completed: false}]};
   }
   case types.REMOVE_ITEM: {
-    console.warn('item removed!' );
-    return state;
+    return {...state,items: state.items.filter((item, i) => i !== action.payload.i )};
   }
   case types.TOGGLE_ITEM_COMPLETED: {
-    console.warn('item toggled!');
-    return state;
+    return {
+      ...state,
+      items: state.items.map((item, i) => {
+        if (i === action.payload.i) {
+          return {label: item.label, completed: !item.completed}
+        }
+        return item
+      }),
+    }
   }
   case types.REMOVE_COMPLETED: {
-    console.warn('remove all');
-    return state;
+    return {...state, items: state.items.filter((item) => !item.completed)};
   }
   default: {
       return state

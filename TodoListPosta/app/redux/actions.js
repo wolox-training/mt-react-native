@@ -6,14 +6,14 @@ export const types = {
 }
 
 const actionCreators = {
-  addItem: () => {
-    return {type: types.ADD_ITEM}
+  addItem: (item) => {
+    return {type: types.ADD_ITEM, payload: {item: item}}
   },
-  removeItem: () => {
-    return {type: types.REMOVE_ITEM}
+  removeItem: (index) => {
+    return {type: types.REMOVE_ITEM, payload: {i: index}}
   },
-  toggleItemCompleted: () => {
-    return {type: types.TOGGLE_ITEM_COMPLETED}
+  toggleItemCompleted: (index) => {
+    return {type: types.TOGGLE_ITEM_COMPLETED, payload: {i: index}}
   },
   removeCompleted: () => {
     return {type: types.REMOVE_COMPLETED}
