@@ -1,9 +1,11 @@
-export const types = {
-  ADD_ITEM: '@@TODO_LIST/ADD_ITEM',
-  REMOVE_ITEM: '@@TODO_LIST/REMOVE_ITEM',
-  TOGGLE_ITEM_COMPLETED: '@@TODO_LIST/TOGGLE_ITEM_COMPLETED',
-  REMOVE_COMPLETED: '@@TODO_LIST/REMOVE_COMPLETED'
-};
+import { createTypes } from 'redux-recompose';
+
+export const types = createTypes([
+  'ADD_ITEM',
+  'REMOVE_ITEM',
+  'TOGGLE_ITEM_COMPLETED',
+  'REMOVE_COMPLETED'
+], '@@TODO_LIST');
 
 const actionCreators = {
   addItem: item => {

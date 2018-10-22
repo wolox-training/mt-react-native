@@ -1,4 +1,5 @@
 import { types } from './actions';
+import { createReducer } from 'redux-recompose';
 
 const initialState = {
   items: [
@@ -33,33 +34,20 @@ const initialState = {
   ]
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.ADD_ITEM: {
-      return { ...state, items: [...state.items, { label: action.payload.item, completed: false }] };
-    }
-    case types.REMOVE_ITEM: {
-      return { ...state, items: state.items.filter((item, i) => i !== action.payload.i) };
-    }
-    case types.TOGGLE_ITEM_COMPLETED: {
-      return {
-        ...state,
-        items: state.items.map((item, i) => {
-          if (i === action.payload.i) {
-            return { label: item.label, completed: !item.completed }
-          }
+const reducerDescription = {
+  [types.ADD_ITEM]: (state, action) => ({ ...state, items: [...state.items, { label: action.payload.item, completed: false }] }),
+  [types.REMOVE_ITEM]: (state, action) => ({ ...state, items: state.items.filter((item, i) => i !== action.payload.i) }),
+  [types.TOGGLE_ITEM_COMPLETED]: (state, action) => ({
+    ...state,
+    items: state.items.map((item, i) => {
+      if (i === action.payload.i) {
+        return { label: item.label, completed: !item.completed };
+      }
 
-          return item;
-        })
-      };
-    }
-    case types.REMOVE_COMPLETED: {
-      return { ...state, items: state.items.filter(item => !item.completed) };
-    }
-    default: {
-      return state;
-    }
-  }
+      return item;
+    })
+  }),
+  [types.REMOVE_COMPLETED]: state => ({ ...state, items: state.items.filter(item => !item.completed) })
 };
 
-export default reducer;
+export default createReducer(initialState, reducerDescription);
