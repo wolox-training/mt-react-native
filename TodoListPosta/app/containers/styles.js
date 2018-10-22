@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../Utils/Consts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 1,
-    backgroundColor: 'whitesmoke'
+    backgroundColor: colors.borderBottomColor
   }
 });
 

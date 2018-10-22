@@ -8,6 +8,7 @@ import List from '../components/list';
 import Input from '../components/input';
 import actionCreators from '../redux/actions';
 import styles from './styles';
+import strings from '../Utils/Strings';
 
 class TodoApp extends Component {
   removeCompleted = () => {
@@ -29,7 +30,7 @@ class TodoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Title> Todo List </Title>
+        <Title> {strings.title} </Title>
         <Input
           placeholder={'Enter an item!'}
           onSubmit={this.addItem}
@@ -41,7 +42,7 @@ class TodoApp extends Component {
           onRemoveItem={this.onRemoveItem}
         />
         <View style={styles.divider} />
-        <Footer onRemoveCompleted={this.removeCompleted}> Remove Completed Items </Footer>
+        <Footer onRemoveCompleted={this.removeCompleted}> {strings.footer} </Footer>
       </View>
     );
   }
