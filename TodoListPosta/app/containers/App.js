@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Platform, Text, View} from 'react-native';
 
-import Title from '../components/title/index';
-import Footer from '../components/footer/index';
-import List from '../components/list/index';
-import Input from '../components/input/index';
+import Title from '../components/title';
+import Footer from '../components/footer';
+import List from '../components/list';
+import Input from '../components/input';
 import actionCreators from '../redux/actions';
 import styles from './styles';
 
