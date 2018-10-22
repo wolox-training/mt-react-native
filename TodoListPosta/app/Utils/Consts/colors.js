@@ -3,7 +3,9 @@ const styleColors = {
   boxBorderColor: 'pink',
   footTextColor: 'red',
   borderTopColor: 'grey',
-  backgroundColor: 'white'
+  backgroundColor: 'white',
+  borderBottomColor: 'whitesmoke',
+  remover: '#CD5C5C'
 };
 
 export default styleColors;

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../Utils/Consts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,10 +11,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: 'whitesmoke'
+    borderBottomColor: colors.borderBottomColor
   },
   completed: {
-    backgroundColor: 'whitesmoke'
+    backgroundColor: colors.borderBottomColor
   },
   rightSection: {
     flexDirection: 'row',
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   remove: {
     marginLeft: 10,
     marginBottom: 2,
-    color: '#CD5C5C',
+    color: colors.remover,
     fontSize: 26
   }
 });
