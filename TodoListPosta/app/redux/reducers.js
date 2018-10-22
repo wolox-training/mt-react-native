@@ -12,7 +12,7 @@ const initialState = {
     },
     {
       label: 'Brush teeth',
-      completed: false
+      completed: true
     },
     {
       label: 'Eat breakfast',
