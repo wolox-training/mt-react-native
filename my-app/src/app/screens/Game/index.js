@@ -1,47 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import calculateWinner from '../../utils/utils';
-import { actions } from '../../../redux/game/actions';
+import actionCreators from '../../../redux/game/actions';
 
 import Board from './components/Board';
 
 class Game extends Component {
-  handleClick = i => {
-    this.props.dispatch({ type: actions.handleClick, pos: i });
-  };
-
-  jumpTo = stepNumber => {
-    this.props.dispatch({ type: actions.jumpTo, stepNumber });
-  };
-
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
-    const winner = calculateWinner(current.squares);
     const moves = history.map((step, move) => {
       const desc = move ? 'Go to move # ' + move : 'Go to the start of the game';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
 
-    let status;
-    if (winner) {
-      status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player: ' + (this.props.xIsNext ? 'X' : 'O');
-    }
-
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div>{this.props.status}</div>
           <ol>{moves}</ol>
         </div>
       </div>
@@ -52,7 +35,21 @@ class Game extends Component {
 const mapStateToProps = state => ({
   history: state.game.history,
   xIsNext: state.game.xIsNext,
-  stepNumber: state.game.stepNumber
+  stepNumber: state.game.stepNumber,
+  status: state.game.status
 });
 
-export default connect(mapStateToProps)(Game);
+const mapDispatchToProps = dispatch => ({
+  handleClick: i => {
+    dispatch(actionCreators.submitPlay(i));
+  },
+
+  jumpTo: stepNumber => {
+    dispatch(actionCreators.jumpTo(stepNumber));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Game);
