@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
-function Title(props) {
+function Title({ children }) {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>{props.children}</Text>
+      <Text style={styles.title}>{children}</Text>
     </View>
   );
 }
