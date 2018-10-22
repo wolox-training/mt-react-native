@@ -11,38 +11,22 @@ import styles from './styles';
 import strings from '../Utils/Strings';
 
 class TodoApp extends Component {
-  removeCompleted = () => {
-    this.props.dispatch(actionCreators.removeCompleted());
-  };
-
-  toggleItemCompleted = index => {
-    this.props.dispatch(actionCreators.toggleItemCompleted(index));
-  };
-
-  onRemoveItem = index => {
-    this.props.dispatch(actionCreators.removeItem(index));
-  };
-
-  addItem = item => {
-    this.props.dispatch(actionCreators.addItem(item));
-  };
-
   render() {
     return (
       <View style={styles.container}>
         <Title> {strings.title} </Title>
         <Input
           placeholder={'Enter an item!'}
-          onSubmit={this.addItem}
+          onSubmit={this.props.addItem}
         />
         <View style={styles.divider} />
         <List
           items={this.props.items}
-          onToggleItemCompleted={this.toggleItemCompleted}
-          onRemoveItem={this.onRemoveItem}
+          onToggleItemCompleted={this.props.toggleItemCompleted}
+          onRemoveItem={this.props.onRemoveItem}
         />
         <View style={styles.divider} />
-        <Footer onRemoveCompleted={this.removeCompleted}> {strings.footer} </Footer>
+        <Footer onRemoveCompleted={this.props.removeCompleted}> {strings.footer} </Footer>
       </View>
     );
   }
@@ -52,4 +36,22 @@ const mapStateToProps = state => ({
   items: state.items
 });
 
-export default connect(mapStateToProps)(TodoApp);
+const mapDispatchToProps = dispatch => ({
+  removeCompleted: () => {
+    dispatch(actionCreators.removeCompleted());
+  },
+  toggleItemCompleted: index => {
+    dispatch(actionCreators.toggleItemCompleted(index));
+  },
+  onRemoveItem: index => {
+    dispatch(actionCreators.removeItem(index));
+  },
+  addItem: item => {
+    dispatch(actionCreators.addItem(item));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoApp);
