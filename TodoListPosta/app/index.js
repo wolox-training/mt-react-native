@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
 import store from './store/store';
-import TodoApp from './containers/App';
+import TodoApp from './Routes/RouteNavigation';
 
 class App extends Component {
   render() {

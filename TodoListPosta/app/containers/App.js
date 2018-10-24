@@ -11,10 +11,14 @@ import styles from './styles';
 import strings from '../Utils/Strings';
 
 class TodoApp extends Component {
+  static navigationOptions = {
+    title: 'Todo List'
+  };
+  // <Title> {strings.title} </Title>
+
   render() {
     return (
       <View style={styles.container}>
-        <Title> {strings.title} </Title>
         <Input
           placeholder={'Enter an item!'}
           onSubmit={this.props.addItem}
