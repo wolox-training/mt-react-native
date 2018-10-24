@@ -17,4 +17,8 @@ function calculateWinner(squares) {
   return null;
 }
 
+export function setCredentialsInLocalStorage(token) {
+  localStorage.setItem('authorization', token);
+}
+
 export default calculateWinner;

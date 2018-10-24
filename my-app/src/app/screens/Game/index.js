@@ -33,10 +33,10 @@ class Game extends Component {
 }
 
 const mapStateToProps = state => ({
-  history: state.history,
-  xIsNext: state.xIsNext,
-  stepNumber: state.stepNumber,
-  status: state.status
+  history: state.game.history,
+  xIsNext: state.game.xIsNext,
+  stepNumber: state.game.stepNumber,
+  status: state.game.status
 });
 
 const mapDispatchToProps = dispatch => ({
