@@ -5,7 +5,8 @@ const styleColors = {
   borderTopColor: 'grey',
   backgroundColor: 'white',
   borderBottomColor: 'whitesmoke',
-  remover: '#CD5C5C'
+  remover: '#CD5C5C',
+  titleColor: 'skyblue'
 };
 
 export default styleColors;

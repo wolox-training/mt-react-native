@@ -1,14 +1,15 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../Utils/Consts/colors';
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'skyblue',
+    backgroundColor: colors.titleColor,
     padding: 40
   },
   title: {
     fontWeight: 'bold',
     textAlign: 'center',
-    color: 'white'
+    color: colors.backgroundColor
   }
 });
 
